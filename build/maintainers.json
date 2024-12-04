@@ -3142,7 +3142,8 @@
     "keocheung"
   ],
   "/hbr/topic/:topic?/:type?": [
-    "nczitzk"
+    "nczitzk",
+    "pseudoyu"
   ],
   "/hdu/cs": [
     "legr4ndk"
@@ -6253,7 +6254,8 @@
     "outloudvi"
   ],
   "/spotify/show/:id": [
-    "caiohsramos"
+    "caiohsramos",
+    "pseudoyu"
   ],
   "/spotify/top/tracks": [
     "outloudvi"
@@ -7668,6 +7670,9 @@
   ],
   "/ymgal/game/release": [
     "SunBK201"
+  ],
+  "/yna/:lang?/:channel?": [
+    "quiniapiezoelectricity"
   ],
   "/yoasobi-music/info/:category?": [],
   "/yoasobi-music/live": [
