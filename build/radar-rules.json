@@ -21684,6 +21684,19 @@
       }
     ]
   },
+  "msn.com": {
+    "_name": "MSN",
+    "www": [
+      {
+        "title": "News",
+        "docs": "https://docs.rsshub.app/routes/traditional-media",
+        "source": [
+          "/:market/channel/source/:name/:id"
+        ],
+        "target": "/msn/:market/:name/:id"
+      }
+    ]
+  },
   "mwm.net.cn": {
     "_name": "管理世界",
     ".": [
@@ -31166,6 +31179,19 @@
       }
     ]
   },
+  "webcatalog.io": {
+    "_name": "WebCatalog",
+    "desktop": [
+      {
+        "title": "Changelog",
+        "docs": "https://docs.rsshub.app/routes/program-update",
+        "source": [
+          "/:lang/changelog"
+        ],
+        "target": "/webcatalog/changelog"
+      }
+    ]
+  },
   "cimidata.com": {
     "_name": "微信小程序",
     ".": [
@@ -32245,7 +32271,8 @@
         "title": "Channel with username",
         "docs": "https://docs.rsshub.app/routes/social-media",
         "source": [
-          "/user/:username"
+          "/user/:username",
+          "/:username"
         ],
         "target": "/youtube/user/:username"
       }
