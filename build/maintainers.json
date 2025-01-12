@@ -4211,6 +4211,9 @@
   "/lfsyd/user/:id?": [
     "auto-bot-ty"
   ],
+  "/lhratings/research/:type?": [
+    "nczitzk"
+  ],
   "/lianxh/:category?": [
     "nczitzk"
   ],
@@ -5718,6 +5721,9 @@
   ],
   "/qq/kg/:userId": [
     "zhangxiang012"
+  ],
+  "/qq/lol/news/:category?": [
+    "nczitzk"
   ],
   "/qq/pd/guild/:id/:sub?/:sort?": [
     "mobyw"
@@ -7406,9 +7412,6 @@
   ],
   "/washingtonpost/app/:category{.+}?": [
     "quiniapiezoelectricity"
-  ],
-  "/watasuke/blog": [
-    "honahuku"
   ],
   "/wchscu/recruit": [
     "ViggoC"
