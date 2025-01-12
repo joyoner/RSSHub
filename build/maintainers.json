@@ -940,9 +940,6 @@
   "/bjx/gf/:type": [
     "Sxuet"
   ],
-  "/blizzard/news-cn/:category?": [
-    "zhangpeng2k"
-  ],
   "/blizzard/news/:language?/:category?": [
     "nczitzk"
   ],
