@@ -85182,7 +85182,10 @@
   "taoguba": {
     "routes": {
       "/blog/:id": {
-        "path": "/blog/:id",
+        "path": [
+          "/blog/:id",
+          "/user/:id"
+        ],
         "categories": [
           "finance"
         ],
@@ -85201,8 +85204,8 @@
         "radar": [
           {
             "source": [
-              "tgb.cn/blog/:id",
-              "tgb.cn/"
+              "taoguba.com.cn/blog/:id",
+              "taoguba.com.cn/"
             ]
           }
         ],
@@ -85212,16 +85215,58 @@
         ],
         "location": "blog.ts"
       },
-      "/:category?": {
-        "path": "/:category?",
+      "/user/:id": {
+        "path": [
+          "/blog/:id",
+          "/user/:id"
+        ],
         "categories": [
           "finance"
         ],
-        "example": "/taoguba",
+        "example": "/taoguba/blog/252069",
         "parameters": {
-          "id": "分类，见下表，默认为社区总版"
+          "id": "博客 id，可在对应博客页中找到"
         },
-        "name": "淘股论坛",
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "taoguba.com.cn/blog/:id",
+              "taoguba.com.cn/"
+            ]
+          }
+        ],
+        "name": "用户博客",
+        "maintainers": [
+          "nczitzk"
+        ],
+        "location": "blog.ts"
+      },
+      "/index": {
+        "path": [
+          "/index",
+          "/:category?"
+        ],
+        "name": "Unknown",
+        "maintainers": [
+          "nczitzk"
+        ],
+        "description": "| 淘股论坛 | 社区总版 | 精华加油 | 网友点赞 |\n  | -------- | -------- | -------- | -------- |\n  | bbs      | zongban  | jinghua  | dianzan  |",
+        "location": "index.ts"
+      },
+      "/:category?": {
+        "path": [
+          "/index",
+          "/:category?"
+        ],
+        "name": "Unknown",
         "maintainers": [
           "nczitzk"
         ],
@@ -85230,7 +85275,7 @@
       }
     },
     "name": "淘股吧",
-    "url": "tgb.cn",
+    "url": "taoguba.com.cn",
     "lang": "zh-CN"
   },
   "taptap": {
