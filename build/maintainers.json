@@ -2755,7 +2755,8 @@
     "pseudoyu"
   ],
   "/google/research": [
-    "Levix"
+    "Levix",
+    "cscnk52"
   ],
   "/google/scholar/:query": [
     "HenryQW"
@@ -5276,6 +5277,9 @@
   "/oshwhub/:sortType?": [
     "tylinux"
   ],
+  "/osu/latest-ranked/:routeParams?": [
+    "nfnfgo"
+  ],
   "/osu/packs/:type?": [
     "JimenezLi"
   ],
@@ -6713,12 +6717,6 @@
     "Fatpandac"
   ],
   "/taoguba/blog/:id": [
-    "nczitzk"
-  ],
-  "/taoguba/user/:id": [
-    "nczitzk"
-  ],
-  "/taoguba/index": [
     "nczitzk"
   ],
   "/taoguba/:category?": [

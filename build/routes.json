@@ -34379,7 +34379,8 @@
         "example": "/google/research",
         "name": "Research Blog",
         "maintainers": [
-          "Levix"
+          "Levix",
+          "cscnk52"
         ],
         "radar": [
           {
@@ -42484,7 +42485,7 @@
         "parameters": {
           "category": "栏目标识，默认为理工要闻"
         },
-        "description": "\n| lgyw | xwdd | zhenew | jxky | ycdt | xskc | jlhz | zsjy | djsz | zxbf | lgxb | mtlg | jzlt |\n| ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |\n| 理工要闻 | 新闻导读 | 综合新闻 | 教学科研 | 院处动态 | 学术科创 | 交流合作 | 招生就业 | 党建思政 | 在线播放 | 理工校报 | 媒体理工 | 讲座论坛 |\n",
+        "description": "| lgyw | xwdd | zhenew | jxky | ycdt | xskc | jlhz | zsjy | djsz | zxbf | lgxb | mtlg | jzlt |\n| ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |\n| 理工要闻 | 新闻导读 | 综合新闻 | 教学科研 | 院处动态 | 学术科创 | 交流合作 | 招生就业 | 党建思政 | 在线播放 | 理工校报 | 媒体理工 | 讲座论坛 |",
         "categories": [
           "university"
         ],
@@ -65763,6 +65764,41 @@
   },
   "osu": {
     "routes": {
+      "/latest-ranked/:routeParams?": {
+        "path": "/latest-ranked/:routeParams?",
+        "categories": [
+          "game"
+        ],
+        "example": "/osu/latest-ranked/includeMode=osu&difficultyLimit=L3&difficultyLimit=U7",
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false,
+          "supportRadar": true
+        },
+        "parameters": {
+          "routeParams": {
+            "description": "Used to pass route parameters in Query String format. Check out route description for more info.",
+            "default": "null"
+          }
+        },
+        "name": "Latest Ranked Beatmap",
+        "description": "\nSubscribe to the new beatmaps on https://osu.ppy.sh/beatmapsets.\n\n#### Parameter Description\n\nParameters allows you to:\n\n- Filter game mode\n- Limit beatmap difficulty\n- Show/hide game mode in feed title\n\nBelow is a table of all allowed parameters passed to `routeParams`\n\n\n| Name              | Default  | Description                                                                                                                                                                                                                                          |\n| ----------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| `includeMode`     | All mode | Could be `osu`, `mania`, `fruits` or `taiko`. Specify included game mode of beatmaps. Including this paramseter multiple times to specify multiple game modes, e.g.: `includeMode=osu&includeMode=mania`. Subscribe to all game modes if not specified |\n| `difficultyLimit` | None     | Lower/upper limit of star rating of the beatmaps in the beatmapset item, e.g.:`difficultyLimit=U6`. Checkout tips in descriptions for detailed explaination and examples.                                                                            |\n| `modeInTitle`     | `true`   | `true` or `false` Add mode info into feed title.\n\n\nThis actual parameters should be passed as `routeParams` in URL Query String format without `?`, e.g.:\n\n    /osu/latest-ranked/modeInTitle=true&includeMode=osu\n\n:::tip\nYou could make use of `difficultyLimit` paramters to create a \"high difficulty/low difficulty only\" only feed.\n\nFor example, if you only wants to play low star rating beatmap like 1 or 2 star, you could subscribe to:\n\n    /osu/latest-ranked/difficultyLimit=U2\n\nThis will filter out all beatmapsets that do not provide at least one beatmap with star rating<=`2.00`.\n\nSimilarly, you could use lower bound to filter out beatmapsets which don't have at least one beatmap\nwith star rating higher than a certain threshold.\n\n    /osu/latest-ranked/difficultyLimit=L6\n\nNow all beatmapsets that don't provided at least one beatmap with star rating higher than `6.00` will be filtered.\n:::\n",
+        "maintainers": [
+          "nfnfgo"
+        ],
+        "radar": [
+          {
+            "source": [
+              "osu.ppy.sh/beatmapsets"
+            ]
+          }
+        ],
+        "location": "beatmaps/latest-ranked.ts"
+      },
       "/packs/:type?": {
         "path": "/packs/:type?",
         "categories": [
@@ -85182,10 +85218,7 @@
   "taoguba": {
     "routes": {
       "/blog/:id": {
-        "path": [
-          "/blog/:id",
-          "/user/:id"
-        ],
+        "path": "/blog/:id",
         "categories": [
           "finance"
         ],
@@ -85204,8 +85237,8 @@
         "radar": [
           {
             "source": [
-              "taoguba.com.cn/blog/:id",
-              "taoguba.com.cn/"
+              "tgb.cn/blog/:id",
+              "tgb.cn/"
             ]
           }
         ],
@@ -85214,59 +85247,17 @@
           "nczitzk"
         ],
         "location": "blog.ts"
-      },
-      "/user/:id": {
-        "path": [
-          "/blog/:id",
-          "/user/:id"
-        ],
-        "categories": [
-          "finance"
-        ],
-        "example": "/taoguba/blog/252069",
-        "parameters": {
-          "id": "博客 id，可在对应博客页中找到"
-        },
-        "features": {
-          "requireConfig": false,
-          "requirePuppeteer": false,
-          "antiCrawler": false,
-          "supportBT": false,
-          "supportPodcast": false,
-          "supportScihub": false
-        },
-        "radar": [
-          {
-            "source": [
-              "taoguba.com.cn/blog/:id",
-              "taoguba.com.cn/"
-            ]
-          }
-        ],
-        "name": "用户博客",
-        "maintainers": [
-          "nczitzk"
-        ],
-        "location": "blog.ts"
-      },
-      "/index": {
-        "path": [
-          "/index",
-          "/:category?"
-        ],
-        "name": "Unknown",
-        "maintainers": [
-          "nczitzk"
-        ],
-        "description": "| 淘股论坛 | 社区总版 | 精华加油 | 网友点赞 |\n  | -------- | -------- | -------- | -------- |\n  | bbs      | zongban  | jinghua  | dianzan  |",
-        "location": "index.ts"
       },
       "/:category?": {
-        "path": [
-          "/index",
-          "/:category?"
+        "path": "/:category?",
+        "categories": [
+          "finance"
         ],
-        "name": "Unknown",
+        "example": "/taoguba",
+        "parameters": {
+          "id": "分类，见下表，默认为社区总版"
+        },
+        "name": "淘股论坛",
         "maintainers": [
           "nczitzk"
         ],
@@ -85275,7 +85266,7 @@
       }
     },
     "name": "淘股吧",
-    "url": "taoguba.com.cn",
+    "url": "tgb.cn",
     "lang": "zh-CN"
   },
   "taptap": {

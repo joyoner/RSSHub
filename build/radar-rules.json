@@ -25156,6 +25156,19 @@
       }
     ]
   },
+  "ppy.sh": {
+    "_name": "osu!",
+    "osu": [
+      {
+        "title": "Latest Ranked Beatmap",
+        "docs": "https://docs.rsshub.app/routes/game",
+        "source": [
+          "/beatmapsets"
+        ],
+        "target": "/osu/latest-ranked/:routeParams?"
+      }
+    ]
+  },
   "otobanana.com": {
     "_name": "OTOBANANA",
     ".": [
@@ -30781,7 +30794,7 @@
       }
     ]
   },
-  "taoguba.com.cn": {
+  "tgb.cn": {
     "_name": "淘股吧",
     ".": [
       {
@@ -30792,15 +30805,6 @@
           "/"
         ],
         "target": "/taoguba/blog/:id"
-      },
-      {
-        "title": "用户博客",
-        "docs": "https://docs.rsshub.app/routes/finance",
-        "source": [
-          "/blog/:id",
-          "/"
-        ],
-        "target": "/taoguba/user/:id"
       }
     ]
   },
